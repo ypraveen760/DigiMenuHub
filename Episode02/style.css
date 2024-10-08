@@ -1,0 +1,13 @@
+#child2{
+    background-color: aqua;
+}
+#child1{
+    background-color: aquamarine;
+}
+#parent{
+    background-color: brown;
+}
+#root{
+    background-color: cadetblue;
+    border: 10px solid;
+}
