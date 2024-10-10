@@ -142,11 +142,11 @@
       this[globalName] = mainExports;
     }
   }
-})({"kEHho":[function(require,module,exports) {
+})({"brrGI":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
-var HMR_SECURE = true;
+var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
 module.bundle.HMR_BUNDLE_ID = "f25375e5f391a837";
@@ -26544,6 +26544,6 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}]},["kEHho","1xC6H","BKs7G"], "BKs7G", "parcelRequirefdde")
+},{}]},["brrGI","1xC6H","BKs7G"], "BKs7G", "parcelRequirefdde")
 
 //# sourceMappingURL=index.f391a837.js.map
