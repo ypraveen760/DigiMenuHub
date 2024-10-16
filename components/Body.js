@@ -1,48 +1,59 @@
 import RestaurantCard from "../components/RestaurantCard";
-// import resList from "../utils/mockData";
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { RESTAURANT_API } from "../utils/constans";
 
 const Body = () => {
   const [listRes, setListRes] = useState([]);
-  const [searchValue, setSearchValue] = useState([' ']);
+  const [searchValue, setSearchValue] = useState([" "]);
   const [filteredRes, setFilteredRes] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.4563596&lng=72.79246119999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTAURANT_API);
     const json = await data.json();
     console.log(json);
-
-    setListRes(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRes(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    if (listRes.length !== 0) {
+      setListRes(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setFilteredRes(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } else {
+      setListRes(
+        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setFilteredRes(
+        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    }
   };
-    if (listRes.length === 0){return <Shimmer />}
-     
- 
+  if (listRes.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
-    <div className="body">
+    <div className="border border-black m-5">
       <div className="search-bar">
         <input
-          className="search"
-          placeholder="Search"
+          className="border border-black m-6 rounded-sm placeholder:to-black"
+          size="20"
+          placeholdertext="Search"
           value={searchValue}
           onChange={(e) => {
             setSearchValue(e.target.value);
           }}
         ></input>
         <button
-          className="search-btn"
+          className="bg-orange-400 text-cyan-50 px-3 mx-2 rounded-md"
           onClick={() => {
             const filterres = listRes.filter((restaurant) =>
               restaurant.info.name
@@ -55,7 +66,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="filter-btn"
+          className="bg-orange-400 text-cyan-50 px-3 mx-2 rounded-md"
           type="button"
           onClick={() => {
             const filterList = listRes.filter(
@@ -68,9 +79,14 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRes.map((restaurant) => (
-          <Link key={restaurant.info.id} to ={"/restaurants/"+restaurant.info.id}><RestaurantCard  resData={restaurant} /></Link>
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
