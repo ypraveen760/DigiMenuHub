@@ -424,6 +424,10 @@ img, video {
   justify-content: space-between;
 }
 
+.rounded {
+  border-radius: .25rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -440,10 +444,6 @@ img, video {
   border-radius: .125rem;
 }
 
-.rounded {
-  border-radius: .25rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -457,23 +457,13 @@ img, video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.border-orange-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 146 60 / var(--tw-border-opacity));
-}
-
 .border-current {
   border-color: currentColor;
 }
 
-.bg-orange-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
-}
-
-.bg-orange-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
+.border-orange-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 146 60 / var(--tw-border-opacity));
 }
 
 .bg-\[\#1A2238\] {
@@ -484,6 +474,16 @@ img, video {
 .bg-\[\#FF6A3D\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 106 61 / var(--tw-bg-opacity));
+}
+
+.bg-orange-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+}
+
+.bg-orange-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -518,14 +518,14 @@ img, video {
   padding-right: .75rem;
 }
 
-.py-3 {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-}
-
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-3 {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
 }
 
 .text-center {
@@ -535,6 +535,11 @@ img, video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
 }
 
 .text-lg {
@@ -552,13 +557,12 @@ img, video {
   line-height: 1rem;
 }
 
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .font-light {
@@ -573,12 +577,13 @@ img, video {
   font-weight: 600;
 }
 
-.font-extrabold {
-  font-weight: 800;
-}
-
 .tracking-widest {
   letter-spacing: .1em;
+}
+
+.text-\[\#FF6A3D\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 106 61 / var(--tw-text-opacity));
 }
 
 .text-cyan-50 {
@@ -589,11 +594,6 @@ img, video {
 .text-orange-50 {
   --tw-text-opacity: 1;
   color: rgb(255 247 237 / var(--tw-text-opacity));
-}
-
-.text-\[\#FF6A3D\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 106 61 / var(--tw-text-opacity));
 }
 
 .text-white {

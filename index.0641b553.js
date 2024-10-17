@@ -3042,17 +3042,25 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 }, undefined)
             },
             {
+                path: "/contact",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactusDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 53,
+                    columnNumber: 18
+                }, undefined)
+            },
+            {
                 path: "/restaurants/:resId",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 53,
+                    lineNumber: 57,
                     columnNumber: 18
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 56,
+            lineNumber: 60,
             columnNumber: 19
         }, undefined)
     }
@@ -3061,7 +3069,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 59,
+    lineNumber: 63,
     columnNumber: 13
 }, undefined));
 var _c;
