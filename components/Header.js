@@ -20,12 +20,6 @@ const Header = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link>Cart</Link>
-          </li>
 
           <button
             className="bg-orange-400 text-cyan-50 px-3  rounded-md"

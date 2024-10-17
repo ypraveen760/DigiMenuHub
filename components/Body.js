@@ -54,7 +54,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="bg-orange-400 text-cyan-50 px-3 mx-6 rounded-md"
+          className="bg-orange-400 text-cyan-50 px-3 mx-6 rounded-md "
           type="button"
           onClick={() => {
             const filterList = listRes.filter(
@@ -67,7 +67,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         {filteredRes.map((restaurant) => (
           <Link
             key={restaurant.info.id}
