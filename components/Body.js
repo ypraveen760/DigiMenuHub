@@ -16,25 +16,13 @@ const Body = () => {
     const data = await fetch(RESTAURANT_API);
     const json = await data.json();
     console.log(json);
-    if (listRes.length !== 0) {
-      setListRes(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-      setFilteredRes(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-    } else {
-      setListRes(
-        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-      setFilteredRes(
-        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-    }
+
+    setListRes(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRes(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
   if (listRes.length === 0) {
     return <Shimmer />;
@@ -44,7 +32,7 @@ const Body = () => {
     <div className="border border-black m-5">
       <div className="search-bar">
         <input
-          className="border border-black m-6 rounded-sm placeholder:to-black"
+          className="border border-black my-6 ml-6 rounded-sm placeholder:to-black"
           size="20"
           placeholdertext="Search"
           value={searchValue}
@@ -53,7 +41,7 @@ const Body = () => {
           }}
         ></input>
         <button
-          className="bg-orange-400 text-cyan-50 px-3 mx-2 rounded-md"
+          className="bg-orange-400 text-cyan-50 px-3 ml-3 rounded-md"
           onClick={() => {
             const filterres = listRes.filter((restaurant) =>
               restaurant.info.name
@@ -66,7 +54,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="bg-orange-400 text-cyan-50 px-3 mx-2 rounded-md"
+          className="bg-orange-400 text-cyan-50 px-3 mx-6 rounded-md"
           type="button"
           onClick={() => {
             const filterList = listRes.filter(

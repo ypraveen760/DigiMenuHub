@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
   const handleClick = () => {
     setShowIndex();
+    // setShowItem(!showItem);
   };
   return (
     <div>
