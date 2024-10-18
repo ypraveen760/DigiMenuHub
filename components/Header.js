@@ -2,11 +2,14 @@ import { LOGO_URL } from "../utils/constans";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
-  console.log(btn);
+
   const { loggedInUser } = useContext(UserContext);
+  const cartItem = useSelector((store) => store.cart.item);
+  console.log(cartItem);
   return (
     <div className="flex justify-between m-5 min-w-[380px] items-center border border-black hover:drop-shadow-xl">
       <div className="w-24">
@@ -19,6 +22,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart ({cartItem.length})</Link>
           </li>
 
           <button
