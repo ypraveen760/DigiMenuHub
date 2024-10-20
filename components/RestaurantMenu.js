@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { API_URL } from "../utils/constans";
+import { API_URL, CORS_PROXY } from "../utils/constans";
 import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
     fetchMenu();
   }, []);
   const fetchMenu = async () => {
-    const data = await fetch(API_URL + resId);
+    const data = await fetch(CORS_PROXY + API_URL + resId);
 
     const json = await data.json();
     setResInfo(json);
