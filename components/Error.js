@@ -8,8 +8,8 @@ const Error = () => {
     <div>
       <main class="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
         <h1 class="text-9xl font-extrabold text-white tracking-widest">404</h1>
-        <div class="bg-[#FF6A3D] px-2 text-sm rounded rotate-12 absolute">
-          Page Not Found
+        <div class="bg-[#FF6A3D] px-2 text-sm rounded p-2 ">
+          Page Not Found OR ERROR WITH SWIGGY API, PLEASE TRY LATER.
         </div>
         <button class="mt-5">
           <a class="relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-none focus:ring">

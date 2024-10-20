@@ -32,6 +32,7 @@ const Body = () => {
     <div className="border border-black m-5">
       <div className="search-bar">
         <input
+          data-testid="searchinput"
           className="border border-black my-6 ml-6 rounded-sm placeholder:to-black"
           size="20"
           placeholdertext="Search"

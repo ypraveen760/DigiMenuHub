@@ -1,19 +1,18 @@
 import { LOGO_URL } from "../utils/constans";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../utils/UserContext";
+
 import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
 
-  const { loggedInUser } = useContext(UserContext);
   const cartItem = useSelector((store) => store.cart.item);
-  console.log(cartItem);
+
   return (
-    <div className="flex justify-between m-5 min-w-[380px] items-center border border-black hover:drop-shadow-xl">
+    <div className="flex justify-between m-5 min-w-[380px] items-center border border-black ">
       <div className="w-24">
-        <img className="logo" src={LOGO_URL} alt="logo of the company" />
+        <img src={LOGO_URL} alt="logo of the company" />
       </div>
       <div className="flex ">
         <ul className="flex mr-5 *:mx-2 *:font-semibold text-lg py-3 px-1 ">
@@ -23,8 +22,12 @@ const Header = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
+
           <li>
             <Link to="/cart">Cart ({cartItem.length})</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
           </li>
 
           <button
@@ -40,7 +43,6 @@ const Header = () => {
           >
             {btn}
           </button>
-          <li>{loggedInUser}</li>
         </ul>
       </div>
     </div>

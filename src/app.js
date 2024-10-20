@@ -23,12 +23,10 @@ const AppLayout = () => {
   const { loggedInUser } = useContext(UserContext);
   return (
     <Provider store={appStore}>
-      <UserContext.Provider value={{ loggedInUser: userName }}>
-        <div className="app">
-          <Header />
-          <Outlet />
-        </div>
-      </UserContext.Provider>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
     </Provider>
   );
 };

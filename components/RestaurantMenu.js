@@ -22,9 +22,6 @@ const RestaurantMenu = () => {
   if (resInfo === null) return <Shimmer />;
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.cards[2]?.card?.card?.info;
-  // const { itemCards } =
-  //   resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-  //     ?.card;
 
   const category =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -44,8 +41,8 @@ const RestaurantMenu = () => {
         <RestaurantCategory
           data={category.card?.card}
           key={category.card?.card.title}
-          showItem={index === showIndex ? true : false}
-          setShowIndex={() => setShowIndex(index)}
+          showItem={index === showIndex}
+          setShowIndex={() => setShowIndex(showIndex === index ? null : index)}
         />
       ))}
     </div>
@@ -53,12 +50,3 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
-
-// <ul>
-// {itemCards.map((item) => (
-//   <li key={item.card.info.id}>
-//     {item.card.info.name} -- Rs{" "}
-//     {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-//   </li>
-// ))}
-// </ul>
