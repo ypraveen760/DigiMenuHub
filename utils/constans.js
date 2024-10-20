@@ -9,4 +9,7 @@ export const RESTAURANT_API =
 
 export const API_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.4563596&lng=72.79246119999999&restaurantId=";
+
 export const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+
+export const GITHUB_API = "https://api.github.com/users/ypraveen760";

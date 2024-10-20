@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import UserContext from "../utils/UserContext";
+import { GITHUB_API, CORS_PROXY } from "../utils/constans";
 const About = () => {
   const [userData, setUserData] = useState("");
   const { loggedInUser } = useContext(UserContext);
@@ -10,7 +11,7 @@ const About = () => {
   }, []);
   const getData = async () => {
     try {
-      data = await fetch("https://api.github.com/users/ypraveen760");
+      data = await fetch(CORS_PROXY + GITHUB_API);
       user = await data.json();
       setUserData(user);
       console.log(user);
